@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+:root {
+  --spotlight-color: rgb(14 165 233 / 0.14);
+  --grid-line: rgb(0 0 0 / 0.06);
+}
+
+.dark {
+  --spotlight-color: rgb(56 189 248 / 0.12);
+  --grid-line: rgb(255 255 255 / 0.04);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.dark body {
+  background-color: #020617;
+  color: #e2e8f0;
+}
+
+::selection {
+  background-color: rgb(14 165 233 / 0.25);
+  color: inherit;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Rotating gradient frame for profile portrait */
+.profile-ring {
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #818cf8,
+    #22d3ee,
+    #38bdf8
+  );
+  background-size: 300% 300%;
+  animation: profile-ring-shift 6s ease infinite;
+}
+
+@keyframes profile-ring-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-ring {
+    animation: none;
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <text
+    x="11"
+    y="24"
+    fill="url(#accent)"
+    font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+    font-size="22"
+    font-weight="300"
+  >/</text>
+</svg>
